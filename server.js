@@ -25,12 +25,12 @@ function sendCurrentUsers(socket) {
             users.push(userInfo.name);
         }
     });
+
     socket.emit('message', {
         name:'System',
         text: 'Current users: ' + users.join(', '),
         timestamp: moment().valueOf()
     });
-
 }
 
 io.on('connection', function (socket) {
